@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LanguageSwitch from './LanguageSwitch';
 
-function RegistrationForm() {
+function RegistrationFormEn() {
   const navigate = useNavigate(); // Create a history object for navigation
   const [formData, setFormData] = useState({
     firstName: "",
@@ -64,8 +64,7 @@ function RegistrationForm() {
         <div className="info">
           <p>
             {/* ลงทะเบียนเพียงครั้งเดียว สามารถใช้งาน Wi-Fi ที่ร้านอาหารในเครือไมเนอร์ฟู้ด ได้โดยไม่ต้องลงทะเบียนใหม่ */}
-            ลงทะเบียนเพียงครั้งเดียว สามารถใช้งาน Wi-Fi
-            ที่ร้านอาหารในเครื่อไมเนอร์ฟู๊ค ได้โดยไม่ต้องลงทะเบียนใหม่
+            Only one-time registeration for Free Wi-Fi usage at all Minor Food Group restaurants.
           </p>
         </div>
 
@@ -77,7 +76,7 @@ function RegistrationForm() {
               name="firstName"
               value={formData.firstName}
               onChange={handleInputChange}
-              placeholder="ชื่อ"
+              placeholder="Firstname"
             />
           </div>
 
@@ -88,7 +87,7 @@ function RegistrationForm() {
               name="lastName"
               value={formData.lastName}
               onChange={handleInputChange}
-              placeholder="นามสกุล"
+              placeholder="Lastname"
             />
           </div>
 
@@ -99,7 +98,7 @@ function RegistrationForm() {
               name="cardID"
               value={formData.cardID}
               onChange={handleInputChange}
-              placeholder="หมายเลขบัตรประชาชานหรือหมายเลขพาสปอร์ต"
+              placeholder="Thai Citizen ID or Passport Number"
             />
           </div>
 
@@ -110,7 +109,7 @@ function RegistrationForm() {
               name="tel"
               value={formData.tel}
               onChange={handleInputChange}
-              placeholder="หมายเลขโทรศัพท์"
+              placeholder="Phone Number"
             />
           </div>
 
@@ -121,39 +120,39 @@ function RegistrationForm() {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              placeholder="อีเมล"
+              placeholder="Email Address"
             />
           </div>
 
           <div className="birthdate">
-            <label>วันเกิด:</label>
+            <label>Date of birth:</label>
             <div className="birthdate-inputs">
               <input
                 type="text"
                 name="year"
                 value={formData.year}
                 onChange={handleInputChange}
-                placeholder="ปี"
+                placeholder="Year"
               />
               <input
                 type="text"
                 name="month"
                 value={formData.month}
                 onChange={handleInputChange}
-                placeholder="เดือน"
+                placeholder="Month"
               />
               <input
                 type="text"
                 name="day"
                 value={formData.day}
                 onChange={handleInputChange}
-                placeholder="วัน"
+                placeholder="Date"
               />
             </div>
           </div>
 
           <div className="sex">
-            <label>เพศ:</label>
+            <label>Gender:</label>
             <input
               type="radio"
               name="sex"
@@ -161,7 +160,7 @@ function RegistrationForm() {
               checked={formData.sex === "female"}
               onChange={handleInputChange}
             />
-            <label>หญิง</label>
+            <label>Female</label>
             <input
               type="radio"
               name="sex"
@@ -169,7 +168,7 @@ function RegistrationForm() {
               checked={formData.sex === "male"}
               onChange={handleInputChange}
             />
-            <label>ชาย</label>
+            <label>Male</label>
           </div>
 
           <div className="agreement">
@@ -180,8 +179,7 @@ function RegistrationForm() {
               onChange={handleInputChange}
             />
             <label>
-              ฉันได้อ่านและยอมรับ ข้อกำหนดการใช้งาน และ นโยบายความเป็นส่วนตัวของ
-              แดรี่ ควีน (ประเทศไทย)
+            I have read and accept terms and conditions and privacy policy of Dairy Queen (Thailand)
             </label>
           </div>
           <div className="agreement">  
@@ -192,17 +190,13 @@ function RegistrationForm() {
               onChange={handleInputChange}
             />
             <label>
-              ฉันยินยอมรับข้อมูลข่าวสาร กิจกรรมส่งเสริมการขายต่างๆ จาก แดรี่
-              ควีน (ประเทศไทย) และ บริษัทในเครือ
-              โดยเราจะเก็บข้อมูลของท่านไว้เป็นความลับ
-              สามารถศึกษาเงื่อนไข/ข้อตกลง นโยบายความเป็นส่วนตัว
-              เพิ่มเติมได้ที่เว็บไซต์ของบริษัท
+            I agree to receive the information including other marketing activities from Dairy Queen (Thailand) and affiliated companies. We will keep your data confidential. Learn more about privacy policy from company website.
             </label>
           </div>
 
           <div className="buttons">
-            <button type="submit">ลงทะเบียน</button>
-            <button type="button">ย้อนกลับ</button>
+            <button type="submit">Register</button>
+            <button type="button">Back</button>
           </div>
         </form>
       </div>
@@ -210,4 +204,4 @@ function RegistrationForm() {
   );
 }
 
-export default RegistrationForm;
+export default RegistrationFormEn;

@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import RegistrationForm from "./RegistrationForm";
+import RegistrationFormEn from "./RegistrationFormEn";
 import ThankYou from "./ThankYou";
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<RegistrationForm />} />
+          <Route path="/th" element={<RegistrationForm />} />
+          <Route path="/en" element={<RegistrationFormEn />} />
           <Route path="/thank-you" element={<ThankYou />} />
         </Routes>
       </Router>
