@@ -93,7 +93,7 @@ function RegistrationForm() {
           onClose={() => setShowAlert(false)}
           message="Please fill in all required fields before submitting."
         />
-      )}
+        )}
         <div className="info">
           <p>
             {/* ลงทะเบียนเพียงครั้งเดียว สามารถใช้งาน Wi-Fi ที่ร้านอาหารในเครือไมเนอร์ฟู้ด ได้โดยไม่ต้องลงทะเบียนใหม่ */}

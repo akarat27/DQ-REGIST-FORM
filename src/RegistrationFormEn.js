@@ -2,8 +2,10 @@ import "./RegistrationForm.css";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LanguageSwitch from './LanguageSwitch';
+import ModalAlert from './ModalAlert'; 
 
 function RegistrationFormEn() {
+  const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate(); // Create a history object for navigation
   const [formData, setFormData] = useState({
     firstName: "",
@@ -27,6 +29,13 @@ function RegistrationFormEn() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
+
+    if (!isFormValid()) {
+      setShowAlert(true); // Show the alert
+      // alert('Please fill in all required fields before submitting.');
+      return;
+    }
+
     // Handle form submission, e.g., send data to a server or perform validation
     try {
       const response = await fetch(
@@ -55,6 +64,22 @@ function RegistrationFormEn() {
     }
   };
 
+  const isFormValid = () => {
+    return (
+      formData.firstName &&
+      formData.lastName &&
+      formData.cardID &&
+      formData.tel &&
+      formData.email &&
+      formData.year &&
+      formData.month &&
+      formData.day &&
+      formData.sex &&
+      formData.agreement1 &&
+      formData.agreement2
+    );
+  };
+
   return (
       <div className="registration-form">
         {/* file is in src */}
@@ -63,7 +88,13 @@ function RegistrationFormEn() {
         </div>
         
         <LanguageSwitch /> {/* Include the LanguageSwitch component here */}
-
+        {showAlert && (
+        <ModalAlert
+          open={showAlert}
+          onClose={() => setShowAlert(false)}
+          message="Please fill in all required fields before submitting."
+        />
+        )}
         <div className="info">
           <p>
             {/* ลงทะเบียนเพียงครั้งเดียว สามารถใช้งาน Wi-Fi ที่ร้านอาหารในเครือไมเนอร์ฟู้ด ได้โดยไม่ต้องลงทะเบียนใหม่ */}
@@ -80,6 +111,7 @@ function RegistrationFormEn() {
               value={formData.firstName}
               onChange={handleInputChange}
               placeholder="First Name"
+              required
             />
           </div>
 
@@ -91,6 +123,7 @@ function RegistrationFormEn() {
               value={formData.lastName}
               onChange={handleInputChange}
               placeholder="Last Name"
+              required
             />
           </div>
 
@@ -102,6 +135,7 @@ function RegistrationFormEn() {
               value={formData.cardID}
               onChange={handleInputChange}
               placeholder="Thai Citizen ID or Passport Number"
+              required
             />
           </div>
 
@@ -113,6 +147,7 @@ function RegistrationFormEn() {
               value={formData.tel}
               onChange={handleInputChange}
               placeholder="Phone Number"
+              required
             />
           </div>
 
@@ -124,6 +159,7 @@ function RegistrationFormEn() {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="Email Address"
+              required
             />
           </div>
 
@@ -180,6 +216,7 @@ function RegistrationFormEn() {
               name="agreement1"
               checked={formData.agreement1}
               onChange={handleInputChange}
+              required
             />
             <label>
             I have read and accept terms and conditions and privacy policy of Dairy Queen (Thailand)
@@ -191,6 +228,7 @@ function RegistrationFormEn() {
               name="agreement2"
               checked={formData.agreement2}
               onChange={handleInputChange}
+              required
             />
             <label>
             I agree to receive the information including other marketing activities from Dairy Queen (Thailand) and affiliated companies. We will keep your data confidential. Learn more about privacy policy from company website.
