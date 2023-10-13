@@ -64,7 +64,7 @@ function RegistrationFormEn() {
         <div className="info">
           <p>
             {/* ลงทะเบียนเพียงครั้งเดียว สามารถใช้งาน Wi-Fi ที่ร้านอาหารในเครือไมเนอร์ฟู้ด ได้โดยไม่ต้องลงทะเบียนใหม่ */}
-            Only one-time registeration for Free Wi-Fi usage at all Minor Food Group restaurants.
+            Only one-time registration for Free Wi-Fi usage at all Minor Food Group restaurants.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ function RegistrationFormEn() {
               name="firstName"
               value={formData.firstName}
               onChange={handleInputChange}
-              placeholder="Firstname"
+              placeholder="First Name"
             />
           </div>
 
@@ -87,7 +87,7 @@ function RegistrationFormEn() {
               name="lastName"
               value={formData.lastName}
               onChange={handleInputChange}
-              placeholder="Lastname"
+              placeholder="Last Name"
             />
           </div>
 
