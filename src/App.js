@@ -1,11 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-import RegistrationForm from './RegistrationForm';
+import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import RegistrationForm from "./RegistrationForm";
+import ThankYou from "./ThankYou";
 
 function App() {
   return (
     <div className="App">
-      <RegistrationForm />
+      <Router>
+        <Routes>
+          <Route path="/" element={<RegistrationForm />} />
+          <Route path="/thank-you" element={<ThankYou />} />
+        </Routes>
+      </Router>
     </div>
   );
 
@@ -28,6 +35,13 @@ function App() {
   //   </div>
   // );
 
+  //   <Router>
+  //   <Routes>
+  //     {/* <Route exact path="/"  component={RegistrationForm} /> */}
+  //     <Route exact path="/thank-you" component={ThankYou} />
+  //     <Route component={RegistrationForm} />
+  //   </Routes>
+  // </Router>
 }
 
 export default App;
