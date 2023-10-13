@@ -6,6 +6,7 @@ import ModalAlert from './ModalAlert';
 
 function RegistrationFormEn() {
   const [showAlert, setShowAlert] = useState(false);
+  const [showExistAlert, setShowExistAlert] = useState(false);
   const navigate = useNavigate(); // Create a history object for navigation
   const [formData, setFormData] = useState({
     firstName: "",
@@ -35,6 +36,28 @@ function RegistrationFormEn() {
       // alert('Please fill in all required fields before submitting.');
       return;
     }
+
+     try{
+      const response = await fetch("https://dq-data-api-tpdx.vercel.app/is-exists", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      //Get response json from server 
+      const data = await response.json();
+      console.log(data);
+      
+      if (data.message === "Data exists") {
+        setShowExistAlert(true); // Show the alert
+        return;
+      }
+  
+      }catch (error) {   
+        console.error("An error occurred:", error);
+      }
 
     // Handle form submission, e.g., send data to a server or perform validation
     try {
@@ -95,6 +118,15 @@ function RegistrationFormEn() {
           message="Please fill in all required fields before submitting."
         />
         )}
+
+        {showExistAlert && (
+        <ModalAlert
+          open={showExistAlert}
+          onClose={() => setShowExistAlert(false)}
+          message="Your profile already exists. Please check your email or tel number and card ID."
+        />
+        )}
+        
         <div className="info">
           <p>
             {/* ลงทะเบียนเพียงครั้งเดียว สามารถใช้งาน Wi-Fi ที่ร้านอาหารในเครือไมเนอร์ฟู้ด ได้โดยไม่ต้องลงทะเบียนใหม่ */}

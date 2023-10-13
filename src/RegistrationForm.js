@@ -6,6 +6,7 @@ import ModalAlert from './ModalAlert';
 
 function RegistrationForm() {
   const [showAlert, setShowAlert] = useState(false);
+  const [showExistAlert, setShowExistAlert] = useState(false);
   const navigate = useNavigate(); // Create a history object for navigation
   const [formData, setFormData] = useState({
     firstName: "",
@@ -32,9 +33,35 @@ function RegistrationForm() {
 
     if (!isFormValid()) {
       setShowAlert(true); // Show the alert
-      // alert('Please fill in all required fields before submitting.');
       return;
     }
+
+   // ส่งข้อมูลไปยัง server ที่เราสร้างขึ้น โดยใช้ fetch API ของ JavaScript ในการส่งข้อมูล โดยใช้ method POST และ header ที่ระบุว่าเป็น JSON และ body ที่เป็นข้อมูลที่เราต้องการส่งไป ซึ่งเป็นข้อมูลที่เราเก็บไว้ในตัวแปร formData ที่เราสร้างขึ้น โดยใช้ JSON.stringify() ในการแปลงข้อมูลให้เป็น JSON ก่อนส่งไป 
+   // check is exists or not 
+   // if not exists, create new one 
+   // if exists, alert 
+   try{
+    const response = await fetch("https://dq-data-api-tpdx.vercel.app/is-exists", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+    
+    //Get response json from server 
+    const data = await response.json();
+    console.log(data);
+    
+    if (data.message === "Data exists") {
+      setShowExistAlert(true); // Show the alert
+      return;
+    }
+
+    }catch (error) {   
+      console.error("An error occurred:", error);
+    }
+
 
     // Handle form submission, e.g., send data to a server or perform validation
     try {
@@ -92,6 +119,13 @@ function RegistrationForm() {
           open={showAlert}
           onClose={() => setShowAlert(false)}
           message="Please fill in all required fields before submitting."
+        />
+        )}
+        {showExistAlert && (
+        <ModalAlert
+          open={showExistAlert}
+          onClose={() => setShowExistAlert(false)}
+          message="Your profile already exists. Please check your email or tel number and card ID."
         />
         )}
         <div className="info">
