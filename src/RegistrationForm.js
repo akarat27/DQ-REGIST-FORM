@@ -2,8 +2,10 @@ import "./RegistrationForm.css";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LanguageSwitch from './LanguageSwitch';
+import ModalAlert from './ModalAlert'; 
 
 function RegistrationForm() {
+  const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate(); // Create a history object for navigation
   const [formData, setFormData] = useState({
     firstName: "",
@@ -27,6 +29,13 @@ function RegistrationForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
+
+    if (!isFormValid()) {
+      setShowAlert(true); // Show the alert
+      // alert('Please fill in all required fields before submitting.');
+      return;
+    }
+
     // Handle form submission, e.g., send data to a server or perform validation
     try {
       const response = await fetch(
@@ -55,6 +64,22 @@ function RegistrationForm() {
     }
   };
 
+  const isFormValid = () => {
+    return (
+      formData.firstName &&
+      formData.lastName &&
+      formData.cardID &&
+      formData.tel &&
+      formData.email &&
+      formData.year &&
+      formData.month &&
+      formData.day &&
+      formData.sex &&
+      formData.agreement1 &&
+      formData.agreement2
+    );
+  };
+
   return (
       <div className="registration-form">
         {/* file is in src */}
@@ -62,7 +87,13 @@ function RegistrationForm() {
           <img src="dq_logo.png" alt="Logo" className="logo" />
         </div>
         <LanguageSwitch /> {/* Include the LanguageSwitch component here */}
-
+        {showAlert && (
+        <ModalAlert
+          open={showAlert}
+          onClose={() => setShowAlert(false)}
+          message="Please fill in all required fields before submitting."
+        />
+      )}
         <div className="info">
           <p>
             {/* ลงทะเบียนเพียงครั้งเดียว สามารถใช้งาน Wi-Fi ที่ร้านอาหารในเครือไมเนอร์ฟู้ด ได้โดยไม่ต้องลงทะเบียนใหม่ */}
@@ -80,6 +111,7 @@ function RegistrationForm() {
               value={formData.firstName}
               onChange={handleInputChange}
               placeholder="ชื่อ"
+              required
             />
           </div>
 
@@ -91,6 +123,7 @@ function RegistrationForm() {
               value={formData.lastName}
               onChange={handleInputChange}
               placeholder="นามสกุล"
+              required
             />
           </div>
 
@@ -102,6 +135,7 @@ function RegistrationForm() {
               value={formData.cardID}
               onChange={handleInputChange}
               placeholder="หมายเลขบัตรประชาชาชนหรือหมายเลขพาสปอร์ต"
+              required
             />
           </div>
 
@@ -113,6 +147,7 @@ function RegistrationForm() {
               value={formData.tel}
               onChange={handleInputChange}
               placeholder="หมายเลขโทรศัพท์"
+              required
             />
           </div>
 
@@ -124,6 +159,7 @@ function RegistrationForm() {
               value={formData.email}
               onChange={handleInputChange}
               placeholder="อีเมล"
+              required
             />
           </div>
 
@@ -180,6 +216,7 @@ function RegistrationForm() {
               name="agreement1"
               checked={formData.agreement1}
               onChange={handleInputChange}
+              required
             />
             <label>
               ฉันได้อ่านและยอมรับ ข้อกำหนดการใช้งาน และ นโยบายความเป็นส่วนตัวของ
@@ -192,6 +229,7 @@ function RegistrationForm() {
               name="agreement2"
               checked={formData.agreement2}
               onChange={handleInputChange}
+              required
             />
             <label>
               ฉันยินยอมรับข้อมูลข่าวสาร กิจกรรมส่งเสริมการขายต่างๆ จาก แดรี่

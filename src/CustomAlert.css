@@ -1,0 +1,16 @@
+.custom-alert {
+    background-color: #0073e0; /* Set the background color */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .custom-alert button {
+    background-color: #70ccd9; /* Style the close button */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
