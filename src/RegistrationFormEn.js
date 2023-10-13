@@ -58,7 +58,10 @@ function RegistrationFormEn() {
   return (
       <div className="registration-form">
         {/* file is in src */}
-        <img src="dq_logo.png" alt="Logo" className="logo" />
+        <div className="logodiv"> 
+          <img src="dq_logo.png" alt="Logo" className="logo" />
+        </div>
+        
         <LanguageSwitch /> {/* Include the LanguageSwitch component here */}
 
         <div className="info">

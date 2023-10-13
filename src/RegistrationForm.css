@@ -37,6 +37,10 @@ body {
       max-width: 70vw; /* Further adjust the size for even smaller screens */
     }
   }
+
+  .logodiv {
+    padding: 70px 0 10px 0 ;
+  }
   
   .info {
     margin: 20px 0;
