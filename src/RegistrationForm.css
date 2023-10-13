@@ -1,0 +1,111 @@
+/* RegistrationForm.css */
+
+body {
+    background: linear-gradient(to bottom, #0073e0, #70ccd9);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+.registration-form {
+    /* background-color: white; */
+    max-width: 80vw;
+    /* max-width: 400px; */
+    margin: 0 auto;
+    padding: 0 20px 0 20px;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .logo {
+    max-width: 30%; /* The logo will take the full width of the container */
+    height: auto; /* Maintain the aspect ratio */
+  
+    @media (max-width: 1024px) {
+      max-width: 30vw; /* Adjust the size for smaller screens */    
+    }
+
+    /* The logo will be centered vertically and horizontally */
+    @media (max-width: 768px) {
+      max-width: 50vw; /* Adjust the size for smaller screens */
+    }
+  
+    @media (max-width: 480px) {
+      max-width: 70vw; /* Further adjust the size for even smaller screens */
+    }
+  }
+  
+  .info {
+    margin: 20px 0;
+    font-size: 16px;
+  }
+  
+  .form {
+    text-align: left;
+  }
+  
+  .form-group {
+    margin: 10px 0;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .birthdate {
+    margin: 10px 0;
+  }
+  
+  .birthdate-inputs {
+    display: flex;
+  }
+  
+  .birthdate-inputs input {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .sex {
+    margin: 10px 0;
+  }
+  
+  .sex input {
+    margin-right: 5px;
+  }
+  
+  .agreement {
+    margin: 10px 0;
+  }
+  
+  .buttons {
+    margin: 20px 0;
+  }
+  
+  .buttons button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .buttons button:last-child {
+    background-color: #ccc;
+    margin-left: 10px;
+  }
+  
