@@ -27,6 +27,10 @@ function RegistrationForm() {
     setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
   };
 
+  const goBack = () => {
+    navigate('/');
+  };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
@@ -289,7 +293,7 @@ function RegistrationForm() {
 
           <div className="buttons">
             <button type="submit">ลงทะเบียน</button>
-            <button type="button">ย้อนกลับ</button>
+            <button type="button" onClick={goBack}>ย้อนกลับ</button>
           </div>
         </form>
       </div>

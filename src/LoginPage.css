@@ -1,0 +1,89 @@
+/* LoginPage.css */
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #0073e0;
+  }
+  
+  .logo {
+    max-width: 30%; 
+    height: auto;
+      /* 40vw; */
+    margin-bottom: 20px;
+
+    @media (max-width: 1024px) {
+        max-width: 30vw; /* Adjust the size for smaller screens */    
+      }
+  
+      /* The logo will be centered vertically and horizontally */
+      @media (max-width: 768px) {
+        max-width: 50vw; /* Adjust the size for smaller screens */
+      }
+    
+      @media (max-width: 480px) {
+        max-width: 70vw; /* Further adjust the size for even smaller screens */
+      }
+
+  }
+  
+  .login-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login-form h2 {
+    margin: 0;
+    color: #0073e0;
+  }
+  
+  .form-group {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    background-color: #0073e0;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #005fad;
+  }
+  
+  .registration-link {
+    margin-top: 20px;
+  }
+  
+  .registration-link a {
+    color: #0073e0;
+    text-decoration: none;
+  }
+  
+  .registration-link a:hover {
+    text-decoration: underline;
+  }
+  
