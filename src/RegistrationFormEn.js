@@ -126,7 +126,7 @@ function RegistrationFormEn() {
           message="Your profile already exists. Please check your email or tel number and card ID."
         />
         )}
-        
+
         <div className="info">
           <p>
             {/* ลงทะเบียนเพียงครั้งเดียว สามารถใช้งาน Wi-Fi ที่ร้านอาหารในเครือไมเนอร์ฟู้ด ได้โดยไม่ต้องลงทะเบียนใหม่ */}
@@ -204,6 +204,8 @@ function RegistrationFormEn() {
                 value={formData.year}
                 onChange={handleInputChange}
                 placeholder="Year"
+                size={4}
+                maxLength={4}
               />
               <input
                 type="text"
@@ -211,6 +213,8 @@ function RegistrationFormEn() {
                 value={formData.month}
                 onChange={handleInputChange}
                 placeholder="Month"
+                size={2}
+                maxLength={2}
               />
               <input
                 type="text"
@@ -218,6 +222,8 @@ function RegistrationFormEn() {
                 value={formData.day}
                 onChange={handleInputChange}
                 placeholder="Date"
+                size={2}
+                maxLength={2}
               />
             </div>
           </div>

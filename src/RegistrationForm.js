@@ -206,6 +206,8 @@ function RegistrationForm() {
                 value={formData.year}
                 onChange={handleInputChange}
                 placeholder="ปี"
+                size={4}
+                maxLength={4}
               />
               <input
                 type="text"
@@ -213,6 +215,8 @@ function RegistrationForm() {
                 value={formData.month}
                 onChange={handleInputChange}
                 placeholder="เดือน"
+                size={2}
+                maxLength={2}
               />
               <input
                 type="text"
@@ -220,6 +224,8 @@ function RegistrationForm() {
                 value={formData.day}
                 onChange={handleInputChange}
                 placeholder="วัน"
+                size={2}
+                maxLength={2}
               />
             </div>
           </div>
