@@ -275,7 +275,7 @@ function RegistrationFormEn() {
           
           <p>
             {/* By submitting this form, you agree to our{' '} */}
-            <a href={'https://www.dairyqueen.co.th/en/privacy-policy'} target="_blank" rel="noopener noreferrer">
+            <a href={'https://www.dairyqueenthailand.com/privacypolicy'} target="_blank" rel="noopener noreferrer">
               Privacy Policy
             </a>
           </p>
