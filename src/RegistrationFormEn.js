@@ -87,7 +87,8 @@ function RegistrationFormEn() {
       // Handle network errors or exceptions
       console.error("An error occurred:", error);
     } finally {
-      navigate("/thank-you"); // Navigate to the thank you page
+      // navigate("/thank-you"); // Navigate to the thank you page
+      navigate("www.google.com")
     }
   };
 

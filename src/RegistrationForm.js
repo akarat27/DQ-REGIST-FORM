@@ -30,7 +30,7 @@ function RegistrationForm() {
   const goBack = () => {
     navigate('/');
   };
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
@@ -91,7 +91,8 @@ function RegistrationForm() {
       // Handle network errors or exceptions
       console.error("An error occurred:", error);
     } finally {
-      navigate("/thank-you"); // Navigate to the thank you page
+      // navigate("/thank-you"); // Navigate to the thank you page
+      navigate("www.google.com")
     }
   };
 

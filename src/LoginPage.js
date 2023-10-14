@@ -32,7 +32,8 @@ function LoginPage() {
               setLoginMessage('Login successful.');
               setShowThankYou(true);
 
-              navigate("/success-login");
+              navigate("www.google.com")
+            //   navigate("/success-login");
             } else {
               setShowAlert(true);  
               setLoginMessage('Login failed. Please check your credentials.');
