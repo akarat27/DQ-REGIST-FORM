@@ -92,7 +92,7 @@ function RegistrationForm() {
       console.error("An error occurred:", error);
     } finally {
       // navigate("/thank-you"); // Navigate to the thank you page
-      navigate("www.google.com")
+      window.location.href = 'https://www.google.com';
     }
   };
 

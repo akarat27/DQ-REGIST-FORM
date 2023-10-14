@@ -32,7 +32,7 @@ function LoginPage() {
               setLoginMessage('Login successful.');
               setShowThankYou(true);
 
-              navigate("www.google.com")
+              window.location.href = 'https://www.google.com';
             //   navigate("/success-login");
             } else {
               setShowAlert(true);  
