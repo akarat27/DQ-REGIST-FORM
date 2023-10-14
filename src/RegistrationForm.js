@@ -280,6 +280,13 @@ function RegistrationForm() {
             </label>
           </div>
 
+          <p>
+            {/* By submitting this form, you agree to our{' '} */}
+            <a href={'https://www.dairyqueenthailand.com/privacypolicy'} target="_blank" rel="noopener noreferrer">
+              Privacy Policy
+            </a>
+          </p>
+
           <div className="buttons">
             <button type="submit">ลงทะเบียน</button>
             <button type="button">ย้อนกลับ</button>

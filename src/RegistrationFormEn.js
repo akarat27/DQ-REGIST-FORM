@@ -272,6 +272,13 @@ function RegistrationFormEn() {
             I agree to receive the information including other marketing activities from Dairy Queen (Thailand) and affiliated companies. We will keep your data confidential. Learn more about privacy policy from company website.
             </label>
           </div>
+          
+          <p>
+            {/* By submitting this form, you agree to our{' '} */}
+            <a href={'https://www.dairyqueen.co.th/en/privacy-policy'} target="_blank" rel="noopener noreferrer">
+              Privacy Policy
+            </a>
+          </p>
 
           <div className="buttons">
             <button type="submit">Register</button>
