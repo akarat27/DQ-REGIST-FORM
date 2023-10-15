@@ -87,8 +87,8 @@ function RegistrationFormEn() {
       // Handle network errors or exceptions
       console.error("An error occurred:", error);
     } finally {
-      // navigate("/thank-you"); // Navigate to the thank you page
-      window.location.href = 'https://www.google.com';
+      navigate("/thank-you"); // Navigate to the thank you page
+      // window.location.href = 'https://www.google.com';
     }
   };
 

@@ -32,8 +32,8 @@ function LoginPage() {
               setLoginMessage('Login successful.');
               setShowThankYou(true);
 
-              window.location.href = 'https://www.google.com';
-            //   navigate("/success-login");
+              //window.location.href = 'https://www.google.com';
+              navigate("/success-login");
             } else {
               setShowAlert(true);  
               setLoginMessage('Login failed. Please check your credentials.');
