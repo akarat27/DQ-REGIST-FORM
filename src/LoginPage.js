@@ -9,7 +9,7 @@ function LoginPage() {
     const navigate = useNavigate(); // Create a history object for navigation
     const [formData, setFormData] = useState({
         cardID: '',
-        tel: '',
+        // tel: '',
       });
 
       const [loginMessage, setLoginMessage] = useState('');
@@ -75,8 +75,8 @@ function LoginPage() {
               placeholder="Thai Citizen ID or Passport Number"
             />
           </div>
-          <div className="form-group">
-            {/* <label htmlFor="lastName">Last Name</label> */}
+          {/* <div className="form-group">
+            {/ <label htmlFor="lastName">Last Name</label> /}
             <input
               type="text"
               id="tel"
@@ -87,7 +87,7 @@ function LoginPage() {
               }
               placeholder="Phone Number"
             />
-          </div>
+          </div> */}
           <button type="submit">Login</button>
         </form>
       </div>
