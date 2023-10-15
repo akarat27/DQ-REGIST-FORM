@@ -101,7 +101,7 @@ function RegistrationForm() {
       formData.firstName &&
       formData.lastName &&
       formData.cardID &&
-      formData.tel &&
+      // formData.tel &&
       formData.email &&
       formData.year &&
       formData.month &&
@@ -185,8 +185,7 @@ function RegistrationForm() {
               name="tel"
               value={formData.tel}
               onChange={handleInputChange}
-              placeholder="หมายเลขโทรศัพท์"
-              required
+              placeholder="(Optional) หมายเลขโทรศัพท์"
             />
           </div>
 

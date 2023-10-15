@@ -97,7 +97,7 @@ function RegistrationFormEn() {
       formData.firstName &&
       formData.lastName &&
       formData.cardID &&
-      formData.tel &&
+      // formData.tel &&
       formData.email &&
       formData.year &&
       formData.month &&
@@ -183,8 +183,7 @@ function RegistrationFormEn() {
               name="tel"
               value={formData.tel}
               onChange={handleInputChange}
-              placeholder="Phone Number"
-              required
+              placeholder="(Optional) Phone Number"
             />
           </div>
 
